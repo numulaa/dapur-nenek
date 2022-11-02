@@ -1,15 +1,139 @@
 <%- include('partials/header') -%>
-  <div class="container">
-    <div class="row justify-content-center mt-5">
-      <ul class="row list-unstyled">
+    <section id="explore-recipes">
+      <section
+        class="container p-5 mx-auto space-x-1 justify-around max-w-2xl py-16 px-8 sm:py-24 lg:max-w-7xl lg:px-8"
+      >
+        <!-- Clothes -->
+        <div
+          class="mt-6 px-8 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8"
+        >
         <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
-            </a>
-          </li>
-        <% } %>
-        </ul>
-    </div>
-  </div>  
-<%- include('partials/footer') -%>
+        <!-- 1st item -->
+          <div class="group relative">
+            <div
+              class="min-h-80 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80"
+            >
+              <img
+                src="<%= posts[i].image%>"
+                alt="Front of men&#039;s Basic Tee in black."
+                class="h-full w-full object-cover object-center lg:h-full lg:w-full"
+              />
+            </div>
+            <div class="mt-4 flex justify-between">
+              <div>
+                <h3 class="text-sm text-gray-700">
+                  <a href="/post/<%= posts[i]._id%>">
+                    <span aria-hidden="true" class="absolute inset-0"></span>
+                    <%= post.title %>
+                  </a>
+                </h3>
+                
+                <h5 class="text-sm font-medium text-gray-500">CreatedBy</h5>
+                <p class="mt-1 text-sm text-gray-500">Black</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart text-sm font-medium text-gray-900"></i>
+                <i class=" hidden fa-solid fa-heart text-sm font-medium text-gray-900"></i>
+
+                <span><%= post.likes %></span>
+              </div>
+              
+            </div>
+          </div>
+          <% } %>
+<!-- 2nd item -->
+          <div class="group relative">
+            <div
+              class="min-h-80 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80"
+            >
+              <img
+                src="https://media.istockphoto.com/photos/chicken-satay-skewer-on-bbq-coal-grill-picture-id1046366454?k=20&m=1046366454&s=612x612&w=0&h=sc-7JupUJ5OQOuaaourbwlLrfclsARnO7X-OxXVcqIo="
+                alt="Front of men&#039;s Basic Tee in black."
+                class="h-full w-full object-cover object-center lg:h-full lg:w-full"
+              />
+            </div>
+            <div class="mt-4 flex justify-between">
+              <div>
+                <h3 class="text-sm text-gray-700">
+                  <a href="#">
+                    <span aria-hidden="true" class="absolute inset-0"></span>
+                    Menu Title
+                  </a>
+                </h3>
+                <h5 class="text-sm font-medium text-gray-500">CreatedBy</h5>
+                <p class="mt-1 text-sm text-gray-500">Black</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart text-sm font-medium text-gray-900"></i>
+                <i class=" hidden fa-solid fa-heart text-sm font-medium text-gray-900"></i>
+                
+                <span>0</span>
+              </div>
+            </div>
+          </div>
+<!-- 3rd item -->
+          <div class="group relative">
+            <div
+              class="min-h-80 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80"
+            >
+              <img
+                src="https://media.istockphoto.com/photos/honey-garlic-chicken-picture-id1029534568?k=20&m=1029534568&s=612x612&w=0&h=j4YFk9yR_FOsnLNhZeyEQ36DhM0M3kS58nRAamYjlmA="
+                alt="Front of men&#039;s Basic Tee in black."
+                class="h-full w-full object-cover object-center lg:h-full lg:w-full"
+              />
+            </div>
+            <div class="mt-4 flex justify-between">
+              <div>
+                <h3 class="text-sm text-gray-700">
+                  <a href="#">
+                    <span aria-hidden="true" class="absolute inset-0"></span>
+                    Menu Title
+                  </a>
+                </h3>
+                <h5 class="text-sm font-medium text-gray-500">CreatedBy</h5>
+                <p class="mt-1 text-sm text-gray-500">Black</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart text-sm font-medium text-gray-900"></i>
+                <i class=" hidden fa-solid fa-heart text-sm font-medium text-gray-900"></i>
+                
+                <span>0</span>
+              </div>
+            </div>
+          </div>
+          <!-- 4th item -->
+          <div class="group relative">
+            <div
+              class="min-h-80 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80"
+            >
+              <img
+                src="https://media.istockphoto.com/photos/chicken-combination-picture-id472952716?k=20&m=472952716&s=612x612&w=0&h=XuZp6NdE6I98C08PeNuEO5te5lm62ISJVVH_8XXYyR4="
+                alt="Front of men&#039;s Basic Tee in black."
+                class="h-full w-full object-cover object-center lg:h-full lg:w-full"
+              />
+            </div>
+            <div class="mt-4 flex justify-between">
+              <div>
+                <h3 class="text-sm text-gray-700">
+                  <a href="#">
+                    <span aria-hidden="true" class="absolute inset-0"></span>
+                    Menu Title
+                  </a>
+                </h3>
+                <h5 class="text-sm font-medium text-gray-500">CreatedBy</h5>
+                <p class="mt-1 text-sm text-gray-500">Black</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-heart text-sm font-medium text-gray-900"></i>
+                <i class=" hidden fa-solid fa-heart text-sm font-medium text-gray-900"></i>
+                
+                <span>0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        </div>
+      </section>
+    </section>
+    <%- include('partials/footer') -%>
