@@ -36,7 +36,7 @@
         </section>
       </div>
 
-      <section id="add-recipe">
+      <section id="login">
         <section class="container p-5 px-2 md:px-10 mx-auto">
           <form
             class="md:grid p-5 px-8 mt-5 md:mt-0"
@@ -48,14 +48,14 @@
                 <!-- email -->
                 <div>
                   <label
-                    for="exampleInputEmail1"
+                    for="email"
                     class="block text-sm font-medium text-gray-700"
                     >Email</label
                   >
                   <input
                     type="email"
                     name="email"
-                    id="exampleInputEmail1"
+                    id="email"
                     autocomplete="given-name"
                     aria-describedby="emailHelp"
                     class="p-1.5 mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
@@ -72,7 +72,6 @@
                     type="password"
                     name="password"
                     id="password"
-                    autocomplete="given-name"
                     class="p-1.5 mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                   />
                 </div>
@@ -87,16 +86,15 @@
                     type="password"
                     name="confirmPassword"
                     id="confirmPassword"
-                    autocomplete="given-name"
                     class="p-1.5 mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                   />
                 </div>
-                <buttton class="flex justify-center md:justify-start">
-                  <a
-                    href="#"
-                    class="text-center text-sm p-2 px-8 rounded-full bg-brightRed hover:bg-brightRedLight"
-                    >Login</a
-                  ></buttton
+
+                <buttton
+                  type="submit"
+                  class="text-center text-sm p-2 px-8 rounded-full bg-brightRed hover:bg-brightRedLight"
+                >
+                  Login</buttton
                 >
               </div>
             </div>

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const PostSchema = new mongoose.Schema({
+const RecipeSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -13,7 +13,11 @@ const PostSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  caption: {
+  ingredients: {
+    type: String,
+    required: true,
+  },
+  direction: {
     type: String,
     required: true,
   },
@@ -25,10 +29,14 @@ const PostSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
+  createdBy: {
+    type: String,
+    required: true,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
   },
 });
 
-module.exports = mongoose.model("Post", PostSchema);
+module.exports = mongoose.model("Recipe", RecipeSchema);

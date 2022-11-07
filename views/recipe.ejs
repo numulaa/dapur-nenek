@@ -1,14 +1,12 @@
 <%- include('partials/header') -%>
-<section id="post">
+<section id="recipe">
   <section
     class="container p-5 mx-auto space-x-1 max-w-2xl py-8 px-4 md:px-8 sm:py-24 lg:max-w-5xl lg:px-8 sm:overflow-hidden sm:rounded-md md:py-3"
   >
     <section class="container p-5 px-8 text-center mx-auto">
       <h2 class="text-sm text-gray-700 mb-0 font-bold text-4xl">
-        <a href="#">
-          <span aria-hidden="true" class="absolute inset-0"></span>
-          <%= post.title %>
-        </a>
+        <span aria-hidden="true" class="absolute inset-0"></span>
+        <%= recipe.title %>
       </h2>
     </section>
     <section class="md:grid md:grid-cols-2">
@@ -17,17 +15,28 @@
           class="min-h-80 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80"
         >
           <img
-            src="https://media.istockphoto.com/photos/chicken-katsu-picture-id472866548?k=20&m=472866548&s=612x612&w=0&h=6XFxhqCxTd38-X5r0VHC1chHXMMEwB4WG0c6dd1w4pk="
-            alt="Front of men&#039;s Basic Tee in black."
+            src="<%= recipe.image%>"
+            alt="<%= recipe.title %>"
             class="h-full w-full object-cover object-center lg:h-full lg:w-full"
           />
         </div>
         <div class="mt-4 flex justify-between">
           <div>
-            <h5 class="text-sm font-medium text-gray-500">CreatedBy</h5>
-            <p class="mt-1 text-sm text-gray-500">Black</p>
+            <h5 class="text-sm font-medium text-gray-500">
+              CreatedBy <span><%= recipe.createdBy %></span>
+            </h5>
           </div>
           <div>
+            <form
+              class="col-1"
+              action="/recipe/likeRecipe/<%= recipe.id %>?_method=PUT"
+              method="POST"
+            >
+              <button
+                class="btn btn-primary fa fa-heart"
+                type="submit"
+              ></button>
+            </form>
             <i
               class="fa-regular fa-heart text-sm font-medium text-gray-900"
             ></i>
@@ -35,12 +44,12 @@
               class="hidden fa-solid fa-heart text-sm font-medium text-gray-900"
             ></i>
 
-            <span><%= post.likes %></span>
+            <span><%= recipe.likes %></span>
           </div>
         </div>
-        <%if(post.user == user.id){ %>
+        <%if(recipe.user == user.id){ %>
         <form
-          action="/post/deletePost/<%= post.id %>?_method=DELETE"
+          action="/recipe/deleteRecipe/<%= post.id %>?_method=DELETE"
           method="POST"
           class="col-3"
         >
@@ -50,6 +59,7 @@
       </section>
       <section class="md:col-span-1 p-5 px-8 mt-0">
         <h4 class="font-bold text-md">Ingredients</h4>
+        <p><%= recipe.ingredients %></p>
       </section>
     </section>
   </section>
