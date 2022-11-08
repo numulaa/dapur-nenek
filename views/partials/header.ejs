@@ -18,7 +18,7 @@
           <h2 class="font-bold text-2xl">dapurNenek.</h2>
         </div>
         <div class="hidden md:flex space-x-6">
-          <a href="/feed" class="hover:text-darkGrayishBlue">Home</a>
+          <a href="/feed" id="feed" class="hover:text-darkGrayishBlue">Home</a>
           <a href="/myRecipe" class="hover:text-darkGrayishBlue">My Recipes</a>
           <a href="/savedRecipe" class="hover:text-darkGrayishBlue"
             >Saved Recipes</a
@@ -30,9 +30,32 @@
         <div>
           <a
             href="/logout"
-            class="text-center p-2 px-3 rounded-full bg-brightRed hover:bg-brightRedLight"
+            class="hidden md:flex text-center p-2 px-3 rounded-full bg-brightRed hover:bg-brightRedLight"
             >Logout</a
           >
+        </div>
+
+        <!-- hamburger icon -->
+        <button
+          id="menu-btn"
+          class="hamburger block md:hidden focus:outline-none text-baseline"
+        >
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
+        <!-- mobile menu -->
+        <div class="md:hidden">
+          <div
+            id="menu"
+            class="hidden absolute flex-col items-center rounded-lg bg-white self-end py-8 mt-10 space-y-6 font-bold sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+          >
+            <a href="/feed">Home</a>
+            <a href="/myRecipe">My Recipes</a>
+            <a href="/savedRecipe">Saved Recipes</a>
+            <a href="createRecipeForm">Add Recipe</a>
+            <a href="/logout">Logout</a>
+          </div>
         </div>
       </nav>
     </header>

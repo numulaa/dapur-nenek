@@ -14,6 +14,7 @@ router.post(
 );
 
 router.put("/likeRecipe/:id", recipesController.likeRecipe);
+router.post("/saveRecipe/:id", recipesController.saveRecipe);
 
 router.delete("/deleteRecipe/:id", recipesController.deleteRecipe);
 

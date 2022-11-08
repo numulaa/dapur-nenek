@@ -3,7 +3,7 @@
       <section
         class="container p-5 mx-auto space-x-1 justify-around max-w-2xl py-16 px-8 sm:py-24 lg:max-w-7xl lg:px-8"
       >
-        <!-- Clothes -->
+        <!-- items -->
         <div
           class="mt-6 px-8 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8"
         >
@@ -21,21 +21,19 @@
             </div>
             <div class="mt-4 flex justify-between">
               <div>
-                <h3 class="text-sm text-gray-700">
+                <h3 class="text-md font-medium text-gray-700">
                   <a href="/recipe/<%= recipes[i]._id%>">
                     <span aria-hidden="true" class="absolute inset-0"></span>
-                    <%= recipe.title %>
+                    <%= recipes[i].title %>
                   </a>
                 </h3>
                 
-                <h5 class="text-sm font-medium text-gray-500">CreatedBy <span><%= recipe.createdBy %></span></h5>
-                <p class="mt-1 text-sm text-gray-500">Black</p>
+                <h5 class="text-sm  text-gray-500">Created by <span><%= recipes[i].createdBy %></span></h5>
+                <p class="mt-1 text-sm text-gray-500"><%= recipes[i].title %></p>
               </div>
-              <div>
+              <div class="flex space-x-1">
                 <i class="fa-regular fa-heart text-sm font-medium text-gray-900"></i>
-                <i class=" hidden fa-solid fa-heart text-sm font-medium text-gray-900"></i>
-
-                <span><%= recipe.likes %></span>
+                <span class="text-sm"><%= recipes[i].likes %></span>
               </div>
               
             </div>

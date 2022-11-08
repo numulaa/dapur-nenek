@@ -9,7 +9,7 @@
               class="min-h-80 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80"
             >
               <img
-                src="<%= recipes[i].image%>"
+                src="<%= recipes[i].recipe.image%>"
                 alt=""
                 class="h-full w-full object-cover object-center lg:h-full lg:w-full"
               />
@@ -17,18 +17,18 @@
             <div class="mt-4 flex justify-between">
               <div>
                 <h3 class="text-md font-medium text-gray-700">
-                  <a href="/recipe/<%= recipes[i]._id%>">
+                  <a href="/recipe/<%= recipes[i].recipe._id%>">
                     <span aria-hidden="true" class="absolute inset-0"></span>
-                    <%= recipes[i].title %>
+                    <%= recipes[i].recipe.title %>
                   </a>
                 </h3>
                 
-                <h5 class="text-sm  text-gray-500">Created by <span><%= recipes[i].createdBy %></span></h5>
-                <p class="mt-1 text-sm text-gray-500"><%= recipes[i].title %></p>
+                <h5 class="text-sm  text-gray-500">Created by <span><%= recipes[i].recipe.createdBy %></span></h5>
+                <p class="mt-1 text-sm text-gray-500"><%= recipes[i].recipe.title %></p>
               </div>
               <div class="flex space-x-1">
                 <i class="fa-regular fa-heart text-sm font-medium text-gray-900"></i>
-                <span class="text-sm"><%= recipes[i].likes %></span>
+                <span class="text-sm"><%= recipes[i].recipe.likes %></span>
               </div>
               
             </div>

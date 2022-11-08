@@ -1,5 +1,6 @@
 const cloudinary = require("../middleware/cloudinary");
 const Recipe = require("../models/Recipe");
+const Saved = require("../models/Saved");
 
 module.exports = {
   getFeed: async (req, res) => {
@@ -49,7 +50,7 @@ module.exports = {
         createdBy: req.user.userName,
       });
       console.log("Post has been added!");
-      res.redirect("/main/myRecipe");
+      res.redirect("/myRecipe");
     } catch (err) {
       console.log(err);
     }
@@ -68,6 +69,25 @@ module.exports = {
       console.log(err);
     }
   },
+  saveRecipe: async (req, res) => {
+    try {
+      await Saved.create({ user: req.user.id, recipe: req.params.id });
+      console.log("recipe saved");
+      res.redirect(`/recipe/${req.params.id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getSavedRecipe: async (req, res) => {
+    try {
+      const recipes = await Saved.find({ user: req.user.id }).populate(
+        "recipe"
+      );
+      res.render("savedRecipe.ejs", { recipes: recipes, user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
   deleteRecipe: async (req, res) => {
     try {
       // Find recipe by id
@@ -77,9 +97,9 @@ module.exports = {
       // Delete recipe from db
       await Recipe.remove({ _id: req.params.id });
       console.log("Deleted Post");
-      res.redirect("/main/myRecipe");
+      res.redirect("/myRecipe");
     } catch (err) {
-      res.redirect("/main/myRecipe");
+      res.redirect("/myRecipe");
     }
   },
 };

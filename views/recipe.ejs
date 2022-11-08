@@ -1,11 +1,10 @@
 <%- include('partials/header') -%>
-<section id="recipe">
+<section>
   <section
     class="container p-5 mx-auto space-x-1 max-w-2xl py-8 px-4 md:px-8 sm:py-24 lg:max-w-5xl lg:px-8 sm:overflow-hidden sm:rounded-md md:py-3"
   >
     <section class="container p-5 px-8 text-center mx-auto">
       <h2 class="text-sm text-gray-700 mb-0 font-bold text-4xl">
-        <span aria-hidden="true" class="absolute inset-0"></span>
         <%= recipe.title %>
       </h2>
     </section>
@@ -23,39 +22,45 @@
         <div class="mt-4 flex justify-between">
           <div>
             <h5 class="text-sm font-medium text-gray-500">
-              CreatedBy <span><%= recipe.createdBy %></span>
+              Created by <span><%= recipe.createdBy %></span>
             </h5>
           </div>
-          <div>
+          <div class="flex space-x-1">
             <form
               class="col-1"
               action="/recipe/likeRecipe/<%= recipe.id %>?_method=PUT"
               method="POST"
             >
               <button
-                class="btn btn-primary fa fa-heart"
+                class="fa-regular fa-heart text-sm font-medium text-gray-900 cursor-pointer"
                 type="submit"
               ></button>
             </form>
-            <i
-              class="fa-regular fa-heart text-sm font-medium text-gray-900"
-            ></i>
-            <i
-              class="hidden fa-solid fa-heart text-sm font-medium text-gray-900"
-            ></i>
-
             <span><%= recipe.likes %></span>
+            <form
+              class="col-1"
+              action="/recipe/saveRecipe/<%= recipe.id %>"
+              method="POST"
+            >
+              <button
+                class="fa-regular fa-bookmark text-sm font-medium text-gray-900 cursor-pointer"
+                type="submit"
+              ></button>
+            </form>
+            <%if(recipe.user == user.id){ %>
+            <form
+              action="/recipe/deleteRecipe/<%= recipe.id %>?_method=DELETE"
+              method="POST"
+              class="col-3"
+            >
+              <button
+                class="btn btn-primary fa fa-trash cursor-pointer"
+                type="submit"
+              ></button>
+            </form>
+            <%}%>
           </div>
         </div>
-        <%if(recipe.user == user.id){ %>
-        <form
-          action="/recipe/deleteRecipe/<%= post.id %>?_method=DELETE"
-          method="POST"
-          class="col-3"
-        >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
-        </form>
-        <%}%>
       </section>
       <section class="md:col-span-1 p-5 px-8 mt-0">
         <h4 class="font-bold text-md">Ingredients</h4>
