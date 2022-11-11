@@ -44,20 +44,24 @@
           <span class="hamburger-middle"></span>
           <span class="hamburger-bottom"></span>
         </button>
-        <!-- mobile menu -->
-        <div class="md:hidden">
-          <div
-            id="menu"
-            class="hidden absolute flex-col items-center rounded-lg bg-white self-end py-8 mt-10 space-y-6 font-bold sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
-          >
-            <a href="/feed">Home</a>
-            <a href="/myRecipe">My Recipes</a>
-            <a href="/savedRecipe">Saved Recipes</a>
-            <a href="createRecipeForm">Add Recipe</a>
-            <a href="/logout">Logout</a>
-          </div>
-        </div>
       </nav>
+      <!-- mobile menu -->
+      <div class="md:hidden sm:block">
+        <div
+          id="menu"
+          class="hidden block flex-col items-center rounded-lg bg-white self-end py-8 mt-10 space-y-6 font-bold sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+        >
+          <a href="/feed" class="hover:text-darkGrayishBlue">Home</a>
+          <a href="/myRecipe" class="hover:text-darkGrayishBlue">My Recipes</a>
+          <a href="/savedRecipe" class="hover:text-darkGrayishBlue"
+            >Saved Recipes</a
+          >
+          <a href="createRecipeForm" class="hover:text-darkGrayishBlue"
+            >Add Recipe</a
+          >
+          <a href="/logout" class="hover:text-darkGrayishBlue">Logout</a>
+        </div>
+      </div>
     </header>
   </body>
 </html>

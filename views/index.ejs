@@ -13,33 +13,51 @@
         <div>
           <h2 class="font-bold text-2xl">dapurNenek.</h2>
         </div>
-        <div class="space-x-6">
+        <div class="hidden md:flex space-x-6">
           <a
             href="/login"
-            class="text-center text-baseline hover:text-darkGrayishBlue"
+            class="text-center text-baseline p-2 hover:text-darkGrayishBlue"
             >Login</a
           >
           <a
             href="/signup"
-            class="text-center p-2 px-3 rounded-full bg-brightRed hover:bg-brightRedLight"
+            class="text-center p-2 px-3 text-baseline rounded-full bg-brightRed hover:bg-brightRedLight"
             >Signup</a
           >
         </div>
+        <!-- hamburger icon -->
+        <button
+          id="menu-btn"
+          class="hamburger block md:hidden focus:outline-none text-baseline"
+        >
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
       </nav>
+      <!-- mobile menu -->
+      <div class="md:hidden sm:block">
+        <div
+          id="menu"
+          class="hidden block flex-col items-center rounded-lg bg-white self-end py-8 mt-10 space-y-6 font-bold sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+        >
+          <a href="/login" class="hover:text-darkGrayishBlue">Login</a>
+          <a href="/signup" class="hover:text-darkGrayishBlue">Signup</a>
+        </div>
+      </div>
     </header>
     <section>
       <div class="container flex flex-col md:flex-row p-5 px-8 mx-auto">
-        <section class="flex flex-col w-1/2 justify-center">
+        <section class="flex flex-col md:w-1/2 justify-center">
           <h1
             class="max-w-md mb-6 font-bold text-4xl text-center md:text-5xl md:text-left"
           >
-            Lorem ipsum dolor sit amet consectetur elit.
+            One app to secure your grandma's recipe
           </h1>
           <p
-            class="text-darkGrayishBlue mb-6 max-w-sm text-center md:text-left"
+            class="text-darkGrayishBlue mb-6 max-w-md text-center md:text-left"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ut
-            deleniti omnis omnis mollitia, facilis facere!
+            Try now, secure your grandma's secret recipe and explore others!
           </p>
           <buttton class="flex justify-center md:justify-start">
             <a
@@ -49,10 +67,25 @@
             >
           </buttton>
         </section>
-        <section class="w-1/2">
+        <section class="md:w-1/2 max-w-md">
           <img src="/imgs/Pizza maker-pana.png" alt="hero img" />
         </section>
       </div>
     </section>
+    <footer class="p-5 mt-10">
+      <p class="text-darkGrayishBlue text-center text-md">
+        Any feedback? Tell me
+
+        <a
+          href="https://twitter.com/numulaa_"
+          class="underline underline-offset-1"
+          >here</a
+        >
+      </p>
+      <div class="text-darkGrayishBlue text-center text-sm">
+        Copyright &copy; 2022, dapurNenek.
+      </div>
+    </footer>
+    <script src="/js/script.js"></script>
   </body>
 </html>
