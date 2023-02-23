@@ -13,7 +13,9 @@ module.exports = {
   },
   getMyRecipe: async (req, res) => {
     try {
-      const recipes = await Recipe.find({ user: req.user.id });
+      const recipes = await Recipe.find({ user: req.user.id })
+        .sort({ createdAt: "desc" })
+        .lean();
       res.render("myRecipe.ejs", { recipes: recipes, user: req.user });
     } catch (err) {
       console.log(err);
